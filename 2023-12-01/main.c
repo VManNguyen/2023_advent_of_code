@@ -159,7 +159,7 @@ int main()
 
     char* line;
     size_t line_len = 0;
-    int64_t count = 0;
+    int count = 0;
     while (-1 != getline(&line, &line_len, file)) {
         int value = line_value(line, line_len);
         if (0 > value) {
@@ -172,6 +172,6 @@ int main()
     if (-1 == fclose(file)) {
         fprintf(stderr, "Could not close file input: %s\n", strerror(errno));
     }
-    fprintf(stdout, "Done, %lu\n", count);
+    fprintf(stdout, "Done, %d\n", count);
     return 0;
 }
